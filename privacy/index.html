@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MeetingMind — 隐私政策 / Privacy Policy</title>
+<meta name="description" content="MeetingMind 隐私政策：录音与转录在设备端完成，无账号、无追踪；云端 AI 摘要需要你的明确同意。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f0f4f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08111f" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://perry-lee.github.io/meetingmind-site/privacy/">
+<style>
+  :root {
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --surface-2: #f7f9fc;
+    --ink: #1a2332;
+    --ink-2: #374151;
+    --ink-3: #64748b;
+    --muted: #6b7a99;
+    --border: #d8e0eb;
+    --accent: #2563eb;
+    --accent-deep: #1e40af;
+    --accent-light: #dbeafe;
+    --accent-text: #1d4ed8;
+    --success-light: #dcfce7;
+    --success-text: #15803d;
+    --serif: ui-serif, "New York", Georgia, "Songti SC", "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+            "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, sans-serif;
+    --radius: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #08111f;
+      --surface: #101a2c;
+      --surface-2: #162338;
+      --ink: #eef4ff;
+      --ink-2: #c9d4e6;
+      --ink-3: #8898aa;
+      --muted: #90a0b6;
+      --border: #24344f;
+      --accent: #60a5fa;
+      --accent-deep: #3b82f6;
+      --accent-light: #16325c;
+      --accent-text: #bfdbfe;
+      --success-light: #143222;
+      --success-text: #bbf7d0;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  /* ---------- header ---------- */
+
+  header {
+    position: relative;
+    padding: 56px 0 28px;
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    inset: -200px -50vw auto;
+    height: 420px;
+    background: linear-gradient(to bottom,
+      color-mix(in srgb, var(--accent-light) 70%, transparent) 0%,
+      color-mix(in srgb, var(--accent-light) 22%, transparent) 45%,
+      transparent 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .badge {
+    width: 56px; height: 56px;
+    border-radius: 17px;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    box-shadow: 0 8px 20px -6px color-mix(in srgb, var(--accent) 55%, transparent);
+    margin-bottom: 18px;
+  }
+  .badge svg { width: 28px; height: 28px; fill: #fff; }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(30px, 6vw, 40px);
+    line-height: 1.2;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    align-items: center;
+  }
+
+  .chip {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-3);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 11px;
+  }
+
+  /* ---------- language switch ---------- */
+
+  .langswitch {
+    display: inline-flex;
+    padding: 3px;
+    gap: 2px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+  }
+
+  .langswitch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--ink-3);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+  }
+  .langswitch button[aria-pressed="true"] {
+    background: var(--accent);
+    color: #fff;
+  }
+  .langswitch button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* ---------- highlights ---------- */
+
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+    margin: 30px 0 8px;
+  }
+
+  .highlight {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 15px 16px;
+  }
+  .highlight h3 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .highlight p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* ---------- sections ---------- */
+
+  section.doc { margin-top: 40px; }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    padding-top: 8px;
+  }
+
+  h2 .num {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 2px;
+    letter-spacing: 0.06em;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 24px 0 6px;
+  }
+
+  p { margin: 0 0 12px; color: var(--ink-2); }
+
+  ul { margin: 0 0 14px; padding-left: 20px; color: var(--ink-2); }
+  li { margin-bottom: 7px; }
+  li::marker { color: var(--ink-3); }
+
+  a { color: var(--accent-text); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+
+  .card.accent {
+    background: color-mix(in srgb, var(--accent-light) 45%, var(--surface));
+    border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  }
+
+  .kicker {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    margin: 0 0 6px;
+  }
+
+  /* table */
+
+  .tablewrap { overflow-x: auto; margin: 16px 0; }
+  table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--ink-2);
+  }
+  th {
+    background: var(--surface-2);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-3);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .tag.local { background: var(--success-light); color: var(--success-text); }
+  .tag.cloud { background: var(--accent-light); color: var(--accent-text); }
+
+  /* contact */
+
+  .contact {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 18px;
+  }
+  .contact a { font-weight: 600; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+
+  [hidden] { display: none !important; }
+
+  @media (max-width: 480px) {
+    body { padding: 0 16px 56px; font-size: 15.5px; }
+    header { padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 0 0-7 0v6A3.5 3.5 0 0 0 12 15Zm6.5-3.5a.9.9 0 0 0-1.8 0 4.7 4.7 0 0 1-9.4 0 .9.9 0 0 0-1.8 0 6.5 6.5 0 0 0 5.6 6.4v2.2h-2.3a.9.9 0 0 0 0 1.8h6.4a.9.9 0 0 0 0-1.8h-2.3v-2.2a6.5 6.5 0 0 0 5.6-6.4Z"/></svg>
+    </div>
+
+    <h1>
+      <span data-lang="zh">隐私政策</span>
+      <span data-lang="en" hidden>Privacy Policy</span>
+    </h1>
+
+    <p class="subtitle">
+      <span data-lang="zh">MeetingMind — 端侧会议记录 app</span>
+      <span data-lang="en" hidden>MeetingMind — on-device meeting recorder for iOS</span>
+    </p>
+
+    <div class="meta">
+      <div class="langswitch" role="group" aria-label="Language">
+        <button type="button" data-set-lang="zh" aria-pressed="true">中文</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+      </div>
+      <span class="chip">
+        <span data-lang="zh">生效日期：2026 年 8 月 1 日</span>
+        <span data-lang="en" hidden>Effective: 1 August 2026</span>
+      </span>
+      <span class="chip">
+        <span data-lang="zh">适用于 MeetingMind for iOS</span>
+        <span data-lang="en" hidden>Applies to MeetingMind for iOS</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- ============================ 中文 ============================ -->
+  <div data-lang="zh">
+
+    <div class="highlights">
+      <div class="highlight">
+        <h3>录音留在你的设备上</h3>
+        <p>音频录制、语音转录、说话人分离全部在 iPhone 本地完成，音频文件从不上传。</p>
+      </div>
+      <div class="highlight">
+        <h3>无账号、无追踪</h3>
+        <p>不需要注册，没有第三方统计 SDK、没有广告、不使用广告标识符（IDFA）。</p>
+      </div>
+      <div class="highlight">
+        <h3>云端 AI 需要你点头</h3>
+        <p>只有在你明确同意后，转录文本才会被发送到云端 AI 服务用于生成摘要。</p>
+      </div>
+    </div>
+
+    <section class="doc">
+
+      <p>MeetingMind（下称“本 app”）由独立开发者 Perry Lee 开发与运营。本政策说明本 app 会接触哪些信息、这些信息存放在哪里、在什么情况下会离开你的设备，以及你可以如何控制它们。</p>
+
+      <h2><span class="num">01</span>核心原则</h2>
+      <div class="card accent">
+        <p class="kicker">一句话版本</p>
+        <p>本 app <strong>没有服务器</strong>。我们不为你建立账号，也不在任何我们控制的服务器上保存你的会议内容。你的数据默认只存在于你的 iPhone 上（以及你自己的 iCloud 账户中）。唯一会离开设备的内容，是你主动使用 AI 功能、并明确同意后所发送的<strong>转录文本</strong>。</p>
+      </div>
+
+      <h2><span class="num">02</span>本 app 涉及的信息</h2>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>信息类型</th><th>用途</th><th>处理位置</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>会议录音</td>
+              <td>录制会议、供你回放</td>
+              <td><span class="tag local">仅设备</span></td>
+            </tr>
+            <tr>
+              <td>转录文本</td>
+              <td>由语音生成文字记录</td>
+              <td><span class="tag local">仅设备</span></td>
+            </tr>
+            <tr>
+              <td>说话人分离</td>
+              <td>区分不同发言人</td>
+              <td><span class="tag local">仅设备</span></td>
+            </tr>
+            <tr>
+              <td>会议信息</td>
+              <td>标题、备注、参会者姓名、标签、任务</td>
+              <td><span class="tag local">仅设备</span></td>
+            </tr>
+            <tr>
+              <td>通讯录姓名</td>
+              <td>你手动挑选的参会者姓名</td>
+              <td><span class="tag local">仅设备</span></td>
+            </tr>
+            <tr>
+              <td>app 设置</td>
+              <td>语言偏好、录音配额计数、同意状态</td>
+              <td><span class="tag local">仅设备</span></td>
+            </tr>
+            <tr>
+              <td>转录文本 + 备注</td>
+              <td>生成 AI 摘要、标题、任务、问 AI</td>
+              <td><span class="tag cloud">经同意后上传</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>本 app <strong>不会</strong>收集：你的姓名、邮箱、手机号、位置、设备标识符、广告标识符、通讯录全量数据、使用行为埋点或崩溃分析数据。</p>
+
+      <h2><span class="num">03</span>数据存放在哪里</h2>
+
+      <h3>你的设备</h3>
+      <p>录音文件、转录文本、摘要、任务和所有会议信息都保存在本 app 的沙盒容器中，受 iOS 系统的文件保护机制保护。开发者无法访问这些数据。</p>
+
+      <h3>你的 iCloud（可选）</h3>
+      <p>本 app 使用 Apple 的 CloudKit 私有数据库，在你启用 iCloud 备份时把会议数据同步到<strong>你自己的 iCloud 账户</strong>，以便在你的设备之间保持一致。数据由 Apple 加密存储，只有你能访问；开发者<strong>无权访问</strong>该数据库。你可以在 app 设置中关闭该同步，或在 iOS 系统设置中撤销本 app 的 iCloud 权限。此过程适用 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a>。</p>
+
+      <h2><span class="num">04</span>云端 AI 处理（重要）</h2>
+
+      <div class="card">
+        <p>录音与转录在设备端完成，但 <strong>AI 摘要、AI 标题、任务提取和“问 AI”</strong> 由云端大模型服务生成。使用这些功能时会发生：</p>
+        <ul>
+          <li><strong>会发送什么：</strong>该场会议的转录文本、你填写的会议标题与备注、以及输出语言设置。</li>
+          <li><strong>不会发送什么：</strong>音频文件本身、你的姓名或邮箱、设备标识符、通讯录、其他会议的内容。请求中不包含任何可用于识别你个人身份的账号信息。</li>
+          <li><strong>发送给谁：</strong><a href="https://openrouter.ai/" target="_blank" rel="noopener">OpenRouter</a>（OpenRouter, Inc.），它再将请求转发给所选的大模型提供方以返回结果。传输全程使用 HTTPS/TLS 加密。相关处理适用 <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter 隐私政策</a>，服务器可能位于你所在国家或地区之外。</li>
+          <li><strong>是否保存：</strong>开发者不在任何自有服务器上保存你的转录文本——本 app 没有服务器。返回的摘要只写回你的设备。</li>
+        </ul>
+      </div>
+
+      <p><strong>你的同意是前提。</strong>首次使用任一 AI 功能前，本 app 会明确告知并请求你的同意；在你同意之前，不会有任何转录文本离开设备。如果你不同意，录音、端侧转录、回放、手动记笔记和任务管理等功能<strong>依然可以完整使用</strong>。</p>
+
+      <p>如果你希望在同意之后停止一切云端处理，只需不再使用 AI 相关功能即可；删除并重新安装本 app 会将同意状态重置为未同意。</p>
+
+      <h2><span class="num">05</span>系统权限</h2>
+      <ul>
+        <li><strong>麦克风：</strong>用于录制会议音频。仅在你主动开始录音时使用。</li>
+        <li><strong>语音识别：</strong>用于调用 Apple 的 Speech 框架，在设备端将语音转为文字。</li>
+        <li><strong>通讯录：</strong>可选。仅在你选择“从通讯录添加参会者”时读取，且只保存你挑选的姓名。本 app 不会读取或上传你的整个通讯录。</li>
+        <li><strong>提醒事项：</strong>可选。仅在你主动点击“添加到提醒事项”时写入任务，本 app 不读取你已有的提醒内容。</li>
+      </ul>
+      <p>以上权限都可以在 iOS「设置 › 隐私与安全性」中随时撤销。</p>
+
+      <h2><span class="num">06</span>订阅与支付</h2>
+      <p>MeetingMind Pro 订阅通过 Apple 的 App 内购买（StoreKit）完成。<strong>你的付款信息由 Apple 处理，本 app 无法看到也不会存储</strong>银行卡、Apple 账户或账单信息。本 app 只从系统获取“当前订阅是否有效”这一状态，用于解锁功能。订阅的管理与退款请通过 Apple 账户设置进行。</p>
+
+      <h2><span class="num">07</span>我们不做的事</h2>
+      <ul>
+        <li>不出售、不出租、不交易你的任何数据。</li>
+        <li>不集成第三方统计、归因或广告 SDK。</li>
+        <li>不使用 Cookie、广告标识符（IDFA）或跨 app 追踪。</li>
+        <li>不用你的会议内容训练任何模型。</li>
+        <li>不要求你注册账号。</li>
+      </ul>
+
+      <h2><span class="num">08</span>数据保留与删除</h2>
+      <p>你的数据保留在你的设备上，直到你删除它：</p>
+      <ul>
+        <li>在会议列表中删除某场会议，会一并删除其录音、转录、摘要与任务。</li>
+        <li>删除本 app，会删除设备上的全部本地数据。</li>
+        <li>若你启用过 iCloud 同步，请在 iOS「设置 › Apple 账户 › iCloud」中管理或删除对应数据。</li>
+      </ul>
+
+      <h2><span class="num">09</span>你的权利</h2>
+      <p>若你位于欧洲经济区、英国、加利福尼亚州或其他有类似法规的地区，你依法享有访问、更正、删除、导出和限制处理个人数据的权利。由于本 app 的数据完全存放在你自己的设备与 iCloud 账户中，<strong>这些权利你可以直接在 app 内行使</strong>：查看、编辑、导出（分享/复制）或删除任意会议记录。开发者不持有你的数据副本，因此无法代为提供或删除。如有疑问，欢迎通过下方邮箱联系。</p>
+      <p>就云端 AI 处理而言，其法律依据是你的<strong>明确同意</strong>；不同意不影响本 app 的核心录音与转录功能。</p>
+
+      <h2><span class="num">10</span>儿童</h2>
+      <p>本 app 面向一般用户，不面向 13 岁以下（在部分地区为 16 岁以下）的儿童，也不会有意收集儿童的个人信息。</p>
+
+      <h2><span class="num">11</span>政策变更</h2>
+      <p>本政策如有更新，将在本页面发布并更新顶部的生效日期。涉及重大变更（例如新增数据接收方）时，我们会在 app 内提示。</p>
+
+      <h2><span class="num">12</span>联系我们</h2>
+      <div class="contact">
+        <p>对本政策或你的数据有任何疑问，请联系：</p>
+        <p style="margin-bottom:0">
+          Perry Lee（MeetingMind 开发者）<br>
+          <a href="mailto:lpgreat@qq.com">lpgreat@qq.com</a>
+        </p>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ============================ English ============================ -->
+  <div data-lang="en" hidden>
+
+    <div class="highlights">
+      <div class="highlight">
+        <h3>Recordings stay on your device</h3>
+        <p>Audio capture, speech transcription and speaker separation all run locally on your iPhone. Audio is never uploaded.</p>
+      </div>
+      <div class="highlight">
+        <h3>No account, no tracking</h3>
+        <p>No sign-up, no third-party analytics SDKs, no ads, no advertising identifier (IDFA).</p>
+      </div>
+      <div class="highlight">
+        <h3>Cloud AI is opt-in</h3>
+        <p>Transcript text is sent to a cloud AI service only after you explicitly consent.</p>
+      </div>
+    </div>
+
+    <section class="doc">
+
+      <p>MeetingMind (the “app”) is built and operated by Perry Lee, an independent developer. This policy explains what information the app touches, where it is stored, when — if ever — it leaves your device, and how you stay in control of it.</p>
+
+      <h2><span class="num">01</span>The core principle</h2>
+      <div class="card accent">
+        <p class="kicker">Short version</p>
+        <p>The app has <strong>no server of its own</strong>. We do not create an account for you and we do not keep your meeting content on any server we control. Your data lives on your iPhone (and in your own iCloud account). The only thing that ever leaves your device is the <strong>transcript text</strong> you choose to send when you use an AI feature and have given explicit consent.</p>
+      </div>
+
+      <h2><span class="num">02</span>Information the app handles</h2>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Purpose</th><th>Processed</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meeting audio</td>
+              <td>Recording meetings and playing them back</td>
+              <td><span class="tag local">On device</span></td>
+            </tr>
+            <tr>
+              <td>Transcripts</td>
+              <td>Turning speech into text</td>
+              <td><span class="tag local">On device</span></td>
+            </tr>
+            <tr>
+              <td>Speaker separation</td>
+              <td>Telling speakers apart</td>
+              <td><span class="tag local">On device</span></td>
+            </tr>
+            <tr>
+              <td>Meeting details</td>
+              <td>Title, notes, participant names, tags, tasks</td>
+              <td><span class="tag local">On device</span></td>
+            </tr>
+            <tr>
+              <td>Contact names</td>
+              <td>Participant names you pick yourself</td>
+              <td><span class="tag local">On device</span></td>
+            </tr>
+            <tr>
+              <td>App settings</td>
+              <td>Language preferences, recording quota, consent state</td>
+              <td><span class="tag local">On device</span></td>
+            </tr>
+            <tr>
+              <td>Transcript + notes</td>
+              <td>AI summaries, titles, task extraction, Ask AI</td>
+              <td><span class="tag cloud">Sent with consent</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The app does <strong>not</strong> collect your name, email address, phone number, location, device identifiers, advertising identifiers, your full address book, behavioural analytics or crash telemetry.</p>
+
+      <h2><span class="num">03</span>Where your data lives</h2>
+
+      <h3>Your device</h3>
+      <p>Audio files, transcripts, summaries, tasks and all meeting details are stored inside the app's sandbox container, protected by iOS file protection. The developer cannot access them.</p>
+
+      <h3>Your iCloud (optional)</h3>
+      <p>When iCloud backup is enabled, the app uses Apple's CloudKit <em>private</em> database to sync meeting data through <strong>your own iCloud account</strong> so it stays consistent across your devices. Apple stores it encrypted and only you can access it; the developer has <strong>no access</strong> to that database. You can turn the sync off in the app's settings, or revoke iCloud access for the app in iOS Settings. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> applies to this processing.</p>
+
+      <h2><span class="num">04</span>Cloud AI processing (important)</h2>
+
+      <div class="card">
+        <p>Recording and transcription happen on device, but <strong>AI summaries, AI titles, task extraction and Ask AI</strong> are generated by a cloud large-language-model service. When you use those features:</p>
+        <ul>
+          <li><strong>What is sent:</strong> the transcript text of that meeting, the meeting title and notes you wrote, and your chosen output language.</li>
+          <li><strong>What is not sent:</strong> the audio file itself, your name or email, device identifiers, your contacts, or the content of other meetings. The request carries no account information that identifies you personally.</li>
+          <li><strong>Who receives it:</strong> <a href="https://openrouter.ai/" target="_blank" rel="noopener">OpenRouter</a> (OpenRouter, Inc.), which routes the request to the selected model provider and returns the result. Transport is encrypted with HTTPS/TLS. This processing is subject to the <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter Privacy Policy</a>, and servers may be located outside your country.</li>
+          <li><strong>Retention:</strong> the developer keeps no copy of your transcript on any server — the app has none. The generated summary is written back only to your device.</li>
+        </ul>
+      </div>
+
+      <p><strong>Your consent comes first.</strong> Before the first use of any AI feature, the app explains this and asks for your consent. No transcript text leaves your device until you agree. If you decline, recording, on-device transcription, playback, manual notes and task management <strong>keep working in full</strong>.</p>
+
+      <p>If you have consented and later want all cloud processing to stop, simply stop using the AI features; deleting and reinstalling the app resets the consent state to “not granted”.</p>
+
+      <h2><span class="num">05</span>System permissions</h2>
+      <ul>
+        <li><strong>Microphone —</strong> to record meeting audio, only while you have actively started a recording.</li>
+        <li><strong>Speech recognition —</strong> to use Apple's Speech framework, which converts speech to text on device.</li>
+        <li><strong>Contacts —</strong> optional. Read only when you choose “add participant from Contacts”, and only the names you pick are stored. The app never reads or uploads your whole address book.</li>
+        <li><strong>Reminders —</strong> optional. Used only when you tap “add to Reminders” to export tasks. The app does not read your existing reminders.</li>
+      </ul>
+      <p>All of these can be revoked at any time in iOS Settings › Privacy &amp; Security.</p>
+
+      <h2><span class="num">06</span>Subscriptions and payment</h2>
+      <p>MeetingMind Pro is sold through Apple's In-App Purchase (StoreKit). <strong>Your payment details are handled by Apple and are never visible to, or stored by, this app</strong> — no card, Apple Account or billing information reaches the developer. The app only receives whether an active subscription exists, in order to unlock features. Manage or request refunds for your subscription through your Apple Account settings.</p>
+
+      <h2><span class="num">07</span>What we never do</h2>
+      <ul>
+        <li>We never sell, rent or trade your data.</li>
+        <li>We do not embed third-party analytics, attribution or advertising SDKs.</li>
+        <li>We do not use cookies, the advertising identifier (IDFA) or cross-app tracking.</li>
+        <li>We do not use your meeting content to train any model.</li>
+        <li>We do not require you to create an account.</li>
+      </ul>
+
+      <h2><span class="num">08</span>Retention and deletion</h2>
+      <p>Your data stays on your device until you delete it:</p>
+      <ul>
+        <li>Deleting a meeting in the list removes its audio, transcript, summary and tasks.</li>
+        <li>Deleting the app removes all local data from the device.</li>
+        <li>If you enabled iCloud sync, manage or delete the synced copy in iOS Settings › Apple Account › iCloud.</li>
+      </ul>
+
+      <h2><span class="num">09</span>Your rights</h2>
+      <p>If you are in the European Economic Area, the United Kingdom, California or another region with comparable law, you have the right to access, correct, delete, export and restrict the processing of your personal data. Because the app's data lives entirely on your own device and in your own iCloud account, <strong>you exercise these rights directly inside the app</strong>: view, edit, export (share/copy) or delete any meeting at will. The developer holds no copy of your data and therefore cannot produce or erase it on your behalf. Questions are welcome at the address below.</p>
+      <p>For cloud AI processing, the legal basis is your <strong>explicit consent</strong>; withholding it does not affect the app's core recording and transcription features.</p>
+
+      <h2><span class="num">10</span>Children</h2>
+      <p>The app is intended for a general audience. It is not directed to children under 13 (under 16 in some regions), and it does not knowingly collect personal information from children.</p>
+
+      <h2><span class="num">11</span>Changes to this policy</h2>
+      <p>Updates are published on this page with a revised effective date at the top. For material changes — such as adding a new data recipient — you will also be notified inside the app.</p>
+
+      <h2><span class="num">12</span>Contact</h2>
+      <div class="contact">
+        <p>For any question about this policy or your data:</p>
+        <p style="margin-bottom:0">
+          Perry Lee — developer of MeetingMind<br>
+          <a href="mailto:lpgreat@qq.com">lpgreat@qq.com</a>
+        </p>
+      </div>
+
+    </section>
+  </div>
+
+  <footer>
+    <span data-lang="zh">© 2026 Perry Lee · MeetingMind</span>
+    <span data-lang="en" hidden>© 2026 Perry Lee · MeetingMind</span>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'mm-privacy-lang';
+
+  function apply(lang) {
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'zh-Hans';
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.hidden = (el.getAttribute('data-lang') !== lang);
+    });
+    document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', String(btn.getAttribute('data-set-lang') === lang));
+    });
+  }
+
+  function initial() {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'en' || q === 'zh') return q;
+    if (location.hash === '#en') return 'en';
+    if (location.hash === '#zh') return 'zh';
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved === 'en' || saved === 'zh') return saved;
+    } catch (e) {}
+    return (navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+  }
+
+  document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = btn.getAttribute('data-set-lang');
+      apply(lang);
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    });
+  });
+
+  apply(initial());
+})();
+</script>
+</body>
+</html>
