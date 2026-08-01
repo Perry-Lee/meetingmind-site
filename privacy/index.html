@@ -363,7 +363,7 @@
     <div class="highlights">
       <div class="highlight">
         <h3>录音留在你的设备上</h3>
-        <p>音频录制、语音转录、说话人分离全部在 iPhone 本地完成，音频文件从不上传。</p>
+        <p>音频录制、语音转录、说话人分离全部在你的设备本地完成，不经过任何服务器。默认设置下，转录完成后原始音频即被删除。</p>
       </div>
       <div class="highlight">
         <h3>无账号、无追踪</h3>
@@ -382,7 +382,7 @@
       <h2><span class="num">01</span>核心原则</h2>
       <div class="card accent">
         <p class="kicker">一句话版本</p>
-        <p>本 app <strong>没有服务器</strong>。我们不为你建立账号，也不在任何我们控制的服务器上保存你的会议内容。你的数据默认只存在于你的 iPhone 上（以及你自己的 iCloud 账户中）。唯一会离开设备的内容，是你主动使用 AI 功能、并明确同意后所发送的<strong>转录文本</strong>。</p>
+        <p>本 app <strong>没有服务器</strong>。我们不为你建立账号，也不在任何我们控制的服务器上保存你的会议内容。你的数据存放在你自己的设备上，以及（在你启用同步时）你自己的 iCloud 账户中。唯一会发送给第三方的内容，是你主动使用 AI 功能、并明确同意后所发送的<strong>转录文本</strong>。</p>
       </div>
 
       <h2><span class="num">02</span>本 app 涉及的信息</h2>
@@ -395,7 +395,7 @@
           <tbody>
             <tr>
               <td>会议录音</td>
-              <td>录制会议、供你回放</td>
+              <td>录制会议；默认转录后即删除</td>
               <td><span class="tag local">仅设备</span></td>
             </tr>
             <tr>
@@ -438,9 +438,10 @@
 
       <h3>你的设备</h3>
       <p>录音文件、转录文本、摘要、任务和所有会议信息都保存在本 app 的沙盒容器中，受 iOS 系统的文件保护机制保护。开发者无法访问这些数据。</p>
+      <p><strong>关于原始音频：</strong>默认设置下，音频只在录制与转录期间存在，完成后即被删除。你可以在设置中开启「保留音频」以便日后回放；开启后音频文件仍留在本机，<strong>不会</strong>通过 iCloud 同步到其他设备，但如果你开启了 iOS 的整机 iCloud 备份，它会像其他 app 数据一样包含在该加密备份中。</p>
 
       <h3>你的 iCloud（可选）</h3>
-      <p>本 app 使用 Apple 的 CloudKit 私有数据库，在你启用 iCloud 备份时把会议数据同步到<strong>你自己的 iCloud 账户</strong>，以便在你的设备之间保持一致。数据由 Apple 加密存储，只有你能访问；开发者<strong>无权访问</strong>该数据库。你可以在 app 设置中关闭该同步，或在 iOS 系统设置中撤销本 app 的 iCloud 权限。此过程适用 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a>。</p>
+      <p>本 app 使用 Apple 的 CloudKit 私有数据库，在你启用同步时把<strong>会议信息、转录文本、摘要和任务</strong>同步到<strong>你自己的 iCloud 账户</strong>，以便在你的设备之间保持一致。原始音频体积过大，被刻意排除在同步之外。数据由 Apple 加密存储，只有你能访问；开发者<strong>无权访问</strong>该数据库。你可以在 app 设置中关闭该同步，或在 iOS 系统设置中撤销本 app 的 iCloud 权限。此过程适用 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a>。</p>
 
       <h2><span class="num">04</span>云端 AI 处理（重要）</h2>
 
@@ -515,7 +516,7 @@
     <div class="highlights">
       <div class="highlight">
         <h3>Recordings stay on your device</h3>
-        <p>Audio capture, speech transcription and speaker separation all run locally on your iPhone. Audio is never uploaded.</p>
+        <p>Audio capture, speech transcription and speaker separation all run locally on your device, with no server involved. By default the original audio is deleted once transcription finishes.</p>
       </div>
       <div class="highlight">
         <h3>No account, no tracking</h3>
@@ -534,7 +535,7 @@
       <h2><span class="num">01</span>The core principle</h2>
       <div class="card accent">
         <p class="kicker">Short version</p>
-        <p>The app has <strong>no server of its own</strong>. We do not create an account for you and we do not keep your meeting content on any server we control. Your data lives on your iPhone (and in your own iCloud account). The only thing that ever leaves your device is the <strong>transcript text</strong> you choose to send when you use an AI feature and have given explicit consent.</p>
+        <p>The app has <strong>no server of its own</strong>. We do not create an account for you and we do not keep your meeting content on any server we control. Your data lives on your own device and, if you enable syncing, in your own iCloud account. The only thing ever sent to a third party is the <strong>transcript text</strong> you choose to send when you use an AI feature and have given explicit consent.</p>
       </div>
 
       <h2><span class="num">02</span>Information the app handles</h2>
@@ -547,7 +548,7 @@
           <tbody>
             <tr>
               <td>Meeting audio</td>
-              <td>Recording meetings and playing them back</td>
+              <td>Recording; deleted after transcription by default</td>
               <td><span class="tag local">On device</span></td>
             </tr>
             <tr>
@@ -590,9 +591,10 @@
 
       <h3>Your device</h3>
       <p>Audio files, transcripts, summaries, tasks and all meeting details are stored inside the app's sandbox container, protected by iOS file protection. The developer cannot access them.</p>
+      <p><strong>About the original audio:</strong> by default it exists only while recording and transcribing, and is deleted afterwards. You can turn on “keep audio” in Settings to replay recordings later; kept audio stays on the device and is <strong>not</strong> synced to your other devices over iCloud, but if you have iOS device backup enabled it is included in that encrypted backup like any other app data.</p>
 
       <h3>Your iCloud (optional)</h3>
-      <p>When iCloud backup is enabled, the app uses Apple's CloudKit <em>private</em> database to sync meeting data through <strong>your own iCloud account</strong> so it stays consistent across your devices. Apple stores it encrypted and only you can access it; the developer has <strong>no access</strong> to that database. You can turn the sync off in the app's settings, or revoke iCloud access for the app in iOS Settings. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> applies to this processing.</p>
+      <p>When syncing is enabled, the app uses Apple's CloudKit <em>private</em> database to sync <strong>meeting details, transcripts, summaries and tasks</strong> through <strong>your own iCloud account</strong> so they stay consistent across your devices. The original audio is deliberately excluded from that sync because of its size. Apple stores it encrypted and only you can access it; the developer has <strong>no access</strong> to that database. You can turn the sync off in the app's settings, or revoke iCloud access for the app in iOS Settings. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> applies to this processing.</p>
 
       <h2><span class="num">04</span>Cloud AI processing (important)</h2>
 
