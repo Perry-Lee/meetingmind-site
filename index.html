@@ -2,29 +2,185 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MeetingMind</title>
-<link rel="canonical" href="https://perry-lee.github.io/meetingmind-site/privacy/">
-<meta http-equiv="refresh" content="0; url=./privacy/">
-<script>location.replace('./privacy/');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meeting Notes — 支持 / Support</title>
+<meta name="description" content="Meeting Notes（会议记录）iOS app 的支持页面：常见问题与联系方式。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f0f4f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08111f" media="(prefers-color-scheme: dark)">
 <style>
+  :root {
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --ink: #1a2332;
+    --ink-2: #374151;
+    --ink-3: #64748b;
+    --muted: #6b7a99;
+    --border: #d8e0eb;
+    --accent: #2563eb;
+    --accent-deep: #1e40af;
+    --accent-text: #1d4ed8;
+    --serif: ui-serif, "New York", Georgia, "Songti SC", "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+            "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #08111f;
+      --surface: #101a2c;
+      --ink: #eef4ff;
+      --ink-2: #c9d4e6;
+      --ink-3: #8898aa;
+      --muted: #90a0b6;
+      --border: #24344f;
+      --accent: #60a5fa;
+      --accent-deep: #3b82f6;
+      --accent-text: #bfdbfe;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    background: #f0f4f8;
-    color: #6b7a99;
-    font: 15px/1.6 -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
+    padding: 0 20px 72px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
-  a { color: #1d4ed8; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #08111f; color: #90a0b6; }
-    a { color: #bfdbfe; }
+  .wrap { max-width: 660px; margin: 0 auto; }
+  header { position: relative; padding: 60px 0 8px; }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: -200px -50vw auto;
+    height: 400px;
+    background: linear-gradient(to bottom,
+      color-mix(in srgb, var(--accent) 16%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 5%, transparent) 45%,
+      transparent 100%);
+    z-index: -1;
+  }
+  .badge {
+    width: 56px; height: 56px;
+    border-radius: 17px;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    box-shadow: 0 8px 20px -6px color-mix(in srgb, var(--accent) 55%, transparent);
+    margin-bottom: 18px;
+  }
+  .badge svg { width: 28px; height: 28px; fill: #fff; }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(30px, 6vw, 38px);
+    line-height: 1.2;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .tagline { margin: 0; color: var(--muted); font-size: 15px; }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 21px;
+    margin: 40px 0 10px;
+  }
+  h3 { font-size: 15px; font-weight: 600; margin: 20px 0 4px; }
+  p { margin: 0 0 12px; color: var(--ink-2); }
+  ul { margin: 0 0 14px; padding-left: 20px; color: var(--ink-2); }
+  li { margin-bottom: 6px; }
+  li::marker { color: var(--ink-3); }
+  a { color: var(--accent-text); text-underline-offset: 2px; }
+  strong { color: var(--ink); font-weight: 600; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .divider { height: 1px; background: var(--border); margin: 48px 0 0; }
+  .lang-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    margin: 0 0 4px;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  @media (max-width: 480px) {
+    body { padding: 0 16px 56px; font-size: 15.5px; }
+    header { padding-top: 44px; }
   }
 </style>
 </head>
 <body>
-  <p>MeetingMind — <a href="./privacy/">隐私政策 / Privacy Policy</a></p>
+<div class="wrap">
+
+  <header>
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 0 0-7 0v6A3.5 3.5 0 0 0 12 15Zm6.5-3.5a.9.9 0 0 0-1.8 0 4.7 4.7 0 0 1-9.4 0 .9.9 0 0 0-1.8 0 6.5 6.5 0 0 0 5.6 6.4v2.2h-2.3a.9.9 0 0 0 0 1.8h6.4a.9.9 0 0 0 0-1.8h-2.3v-2.2a6.5 6.5 0 0 0 5.6-6.4Z"/></svg>
+    </div>
+    <h1>Meeting Notes</h1>
+    <p class="tagline">会议记录 · 端侧录音转文字 · iOS</p>
+  </header>
+
+  <!-- 中文 -->
+  <p class="lang-label" style="margin-top:36px">中文</p>
+  <h2>支持</h2>
+  <p>录音、语音转文字和说话人分离全部在你的 iPhone 上完成，音频不会上传。AI 纪要使用云端服务，需要你明确同意后才会发送转录文本。</p>
+
+  <h3>常见问题</h3>
+  <ul>
+    <li><strong>没有网络还能用吗？</strong>可以。录音和转录完全离线可用，飞行模式下照常工作。只有 AI 纪要需要联网。</li>
+    <li><strong>录音会被上传吗？</strong>不会。音频文件始终留在设备上。使用 AI 功能时，只有转录的<em>文字</em>会在你同意后发送。</li>
+    <li><strong>怎么管理或取消订阅？</strong>在 iPhone「设置 › 你的 Apple 账户 › 订阅」中管理。退款请通过 Apple 申请。</li>
+    <li><strong>换手机后数据会跟过去吗？</strong>开启 iCloud 同步后会通过你自己的 iCloud 账户同步。可在 app 设置中开关。</li>
+    <li><strong>怎么删除我的数据？</strong>删除对应会议即可一并删除录音、转录、摘要与任务；删除 app 会清除全部本地数据。</li>
+  </ul>
+
+  <div class="card">
+    <p>其他问题或反馈，直接发邮件：<br>
+    <a href="mailto:lpgreat@qq.com">lpgreat@qq.com</a></p>
+  </div>
+
+  <p><a href="./privacy/">隐私政策 →</a></p>
+
+  <div class="divider"></div>
+
+  <!-- English -->
+  <p class="lang-label" style="margin-top:36px">English</p>
+  <h2>Support</h2>
+  <p>Recording, transcription and speaker separation all run on your iPhone — audio is never uploaded. AI summaries use a cloud service and only send transcript text after you explicitly agree.</p>
+
+  <h3>Frequently asked</h3>
+  <ul>
+    <li><strong>Does it work without internet?</strong> Yes. Recording and transcription work fully offline, even in Airplane Mode. Only AI summaries need a connection.</li>
+    <li><strong>Is my audio uploaded?</strong> No. Audio files stay on the device. When you use an AI feature, only the transcript <em>text</em> is sent, and only after you consent.</li>
+    <li><strong>How do I manage or cancel my subscription?</strong> In Settings › your Apple Account › Subscriptions on your iPhone. Refunds are requested through Apple.</li>
+    <li><strong>Will my data move to a new phone?</strong> Yes, if iCloud sync is enabled — it syncs through your own iCloud account. Toggle it in the app's settings.</li>
+    <li><strong>How do I delete my data?</strong> Deleting a meeting removes its audio, transcript, summary and tasks. Deleting the app removes all local data.</li>
+  </ul>
+
+  <div class="card">
+    <p>Anything else, just email:<br>
+    <a href="mailto:lpgreat@qq.com">lpgreat@qq.com</a></p>
+  </div>
+
+  <p><a href="./privacy/?lang=en">Privacy Policy →</a></p>
+
+  <footer>© 2026 Perry Lee · Meeting Notes</footer>
+
+</div>
 </body>
 </html>

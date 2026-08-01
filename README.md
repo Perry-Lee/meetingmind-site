@@ -1,9 +1,10 @@
 # meetingmind-site
 
-Public web pages for the **MeetingMind** iOS app, served by GitHub Pages.
+Public web pages for the **Meeting Notes** iOS app, served by GitHub Pages.
 
 | Page | URL |
 | --- | --- |
+| Support / FAQ | <https://perry-lee.github.io/meetingmind-site/> |
 | Privacy Policy (中文 / English) | <https://perry-lee.github.io/meetingmind-site/privacy/> |
 
 The privacy policy URL is referenced from:
